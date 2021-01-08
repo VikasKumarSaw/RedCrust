@@ -126,10 +126,25 @@ main{
 }
 
 .cards{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    // max-height: 1080px;
+    height: 100%;
     margin: 0 auto;
-    background-color: green;
+    // background-color: green;
+    padding-right: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    .card{
+        width: 250px;
+        height: 250px;
+        backdrop-filter: blur(2px);
+        background-color: rgba($color: #fff, $alpha: .05);
+        border: 2px solid rgba($color: #fff, $alpha: .5);
+        margin: 2rem;
+        margin-right: 0;
+        border-radius: 1rem;
+    }
 }
 
 footer{
@@ -146,6 +161,17 @@ footer{
 }
 
 @media screen and (min-width: 250px){
+    .cards{
+        margin-top: 3rem;
+            grid-template-columns: repeat(1, 1fr);
+            padding: 0;
+            .card{
+                margin: 10px auto;
+            }
+            .card:not(:nth-child(1)){
+                display: none;
+            }
+    }
 
     .tint{
         padding: 0;
@@ -230,7 +256,24 @@ footer{
             }}
 }
 @media screen and (min-width: 560px) {
+        .cards {
+            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0;
 
+            .card {
+                margin: 10px auto;
+                display: none;
+            }
+
+            .card:nth-child(1),.card:nth-child(2){
+                display: block;
+            }
+
+            // .card:not(:nth-child(n>3)) {
+            //     display: none;
+            // }
+        }
 
 
         .desc {
@@ -254,6 +297,22 @@ footer{
 
 }
 @media screen and (min-width: 850px) {
+            .cards {
+
+                grid-template-columns: repeat(1, 1fr);
+                padding-right: 7rem;
+
+                .card {
+                    margin: 10px 10px;
+                    display: none;
+                }
+                .card:nth-child(2) {
+                    display: none;
+                }
+                .card:nth-child(1) {
+                    display: block;
+                }
+            }
         .tint {
             padding: 5vh 0;
         }
@@ -336,7 +395,46 @@ footer{
 
     }
 }
+
+@media screen and (min-width: 1320px){
+                .cards {
+
+                    grid-template-columns: repeat(2, 1fr);
+                    padding-right: 7rem;
+
+                    .card {
+                        margin-left: 2rem;
+                        display: block;
+                    }
+                    .card:nth-child(2),
+                    .card:nth-child(3),
+                    .card:nth-child(4)
+                    {
+                        display: block;
+                    }
+                       
+                }
+}
 @media screen and (min-width: 1800px) {
+                    .cards {
+
+                        grid-template-columns: repeat(3, 1fr);
+                        padding-right: 7rem;
+
+                        .card {
+                            margin-left: 2rem;
+                            display: block;
+                        }
+
+                        .card:nth-child(2),
+                        .card:nth-child(3),
+                        .card:nth-child(4),
+                        .card:nth-child(5),
+                        .card:nth-child(6) {
+                            display: block;
+                        }
+
+                    }
     .desc {
 
         h1 {

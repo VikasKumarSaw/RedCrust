@@ -149,10 +149,26 @@ main {
 }
 
 .cards {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  background-color: green;
+  padding-right: 7rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.cards .card {
+  width: 250px;
+  height: 250px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  margin: 2rem;
+  margin-right: 0;
+  border-radius: 1rem;
 }
 
 footer {
@@ -167,6 +183,18 @@ footer {
 }
 
 @media screen and (min-width: 250px) {
+  .cards {
+    margin-top: 3rem;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+  }
+  .cards .card {
+    margin: 10px auto;
+  }
+  .cards .card:not(:nth-child(1)) {
+    display: none;
+  }
   .tint {
     padding: 0;
   }
@@ -242,6 +270,19 @@ footer {
 }
 
 @media screen and (min-width: 560px) {
+  .cards {
+    margin-top: 3rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+  .cards .card {
+    margin: 10px auto;
+    display: none;
+  }
+  .cards .card:nth-child(1), .cards .card:nth-child(2) {
+    display: block;
+  }
   .desc h1 {
     font-size: 1.6em;
     margin-top: 1.2;
@@ -253,6 +294,21 @@ footer {
 }
 
 @media screen and (min-width: 850px) {
+  .cards {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    padding-right: 7rem;
+  }
+  .cards .card {
+    margin: 10px 10px;
+    display: none;
+  }
+  .cards .card:nth-child(2) {
+    display: none;
+  }
+  .cards .card:nth-child(1) {
+    display: block;
+  }
   .tint {
     padding: 5vh 0;
   }
@@ -319,7 +375,40 @@ footer {
   }
 }
 
+@media screen and (min-width: 1320px) {
+  .cards {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding-right: 7rem;
+  }
+  .cards .card {
+    margin-left: 2rem;
+    display: block;
+  }
+  .cards .card:nth-child(2),
+  .cards .card:nth-child(3),
+  .cards .card:nth-child(4) {
+    display: block;
+  }
+}
+
 @media screen and (min-width: 1800px) {
+  .cards {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    padding-right: 7rem;
+  }
+  .cards .card {
+    margin-left: 2rem;
+    display: block;
+  }
+  .cards .card:nth-child(2),
+  .cards .card:nth-child(3),
+  .cards .card:nth-child(4),
+  .cards .card:nth-child(5),
+  .cards .card:nth-child(6) {
+    display: block;
+  }
   .desc h1 {
     font-size: 3.2rem;
     margin-bottom: 2rem;
