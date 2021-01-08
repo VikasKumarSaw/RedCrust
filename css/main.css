@@ -160,15 +160,69 @@ main {
 }
 
 .cards .card {
+  position: relative;
   width: 250px;
   height: 250px;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.005);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   margin: 2rem;
   margin-right: 0;
   border-radius: 1rem;
+  font-family: "Montserrat";
+}
+
+.cards .front {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  width: 100%;
+  padding-top: 190px;
+}
+
+.cards .front .card-text {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 120%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.cards .card:nth-child(1) > .front {
+  background: url("../images/pizza1_cropped.jpg");
+  background-position: center;
+}
+
+.cards .card:nth-child(2) > .front {
+  background: url("../images/pizza2_c.jpg");
+  background-position: center;
+}
+
+.cards .card:nth-child(3) > .front {
+  background: url("../images/pizza3_c.jpg");
+  background-position: center;
+}
+
+.cards .card:nth-child(4) > .front {
+  background: url("../images/pizza4_c.jpg");
+  background-position: center;
+}
+
+.cards .card:nth-child(5) > .front {
+  background: url("../images/pizza5_c.jpg");
+  background-position: center;
+}
+
+.cards .card:nth-child(6) > .front {
+  background: url("../images/pizza6_c.jpg");
+  background-position: center;
 }
 
 footer {
