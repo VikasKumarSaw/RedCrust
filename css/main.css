@@ -177,7 +177,7 @@ main {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  padding: 5px;
+  padding: 1rem;
   font-size: 120%;
   position: absolute;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -187,14 +187,23 @@ main {
   border-radius: 1rem;
   -webkit-transform: perspective(600px) rotateY(180deg);
           transform: perspective(600px) rotateY(180deg);
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cards .front {
   position: absolute;
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
   -webkit-transform: perspective(600px) rotateY(0deg);
           transform: perspective(600px) rotateY(0deg);
   overflow: hidden;
@@ -232,32 +241,32 @@ main {
 }
 
 .cards .card:nth-child(1) > .front {
-  background: url("../images/pizza1_cropped.jpg");
+  background: url("../images/pizza1_cropped_dark.jpg");
   background-position: center;
 }
 
 .cards .card:nth-child(2) > .front {
-  background: url("../images/pizza2_c.jpg");
+  background: url("../images/pizza2_c_dark.jpg");
   background-position: center;
 }
 
 .cards .card:nth-child(3) > .front {
-  background: url("../images/pizza3_c.jpg");
+  background: url("../images/pizza3_c_dark.jpg");
   background-position: center;
 }
 
 .cards .card:nth-child(4) > .front {
-  background: url("../images/pizza4_c.jpg");
+  background: url("../images/pizza4_c_dark.jpg");
   background-position: center;
 }
 
 .cards .card:nth-child(5) > .front {
-  background: url("../images/pizza5_c.jpg");
+  background: url("../images/pizza5_c_dark.jpg");
   background-position: center;
 }
 
 .cards .card:nth-child(6) > .front {
-  background: url("../images/pizza6_c.jpg");
+  background: url("../images/pizza6_c_dark.jpg");
   background-position: center;
 }
 
