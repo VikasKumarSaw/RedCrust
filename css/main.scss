@@ -137,17 +137,36 @@ main{
 
     .card{
         position: relative;
+        cursor: pointer;
         width: 250px;
         height: 250px;
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(10px);
         background-color: rgba($color: #000, $alpha: .005);
         border: 2px solid rgba($color: #fff, $alpha: .1);
         margin: 2rem;
         margin-right: 0;
         border-radius: 1rem;
         font-family: "Montserrat";
+
+    }
+    .back{
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        overflow: hidden;
+        backface-visibility: hidden;
+        padding: 5px;
+        font-size: 120%;
+        position: absolute;
+        border: 1px solid rgba($color: #fff, $alpha: .1);
+        background: rgba($color: #ffffff, $alpha: .1);
+        backdrop-filter: blur(5px);
+        border-radius: 1rem;
     }
     .front{
+        position: absolute;
+        overflow: hidden;
+        backface-visibility: hidden;
         width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
