@@ -140,15 +140,17 @@ main{
         cursor: pointer;
         width: 250px;
         height: 250px;
-        backdrop-filter: blur(10px);
-        background-color: rgba($color: #000, $alpha: .005);
-        border: 2px solid rgba($color: #fff, $alpha: .1);
+        // backdrop-filter: blur(10px);
+        // background-color: rgba($color: #000, $alpha: .005);
+        // border: 2px solid rgba($color: #fff, $alpha: .1);
         margin: 2rem;
         margin-right: 0;
         border-radius: 1rem;
         font-family: "Montserrat";
 
     }
+    
+
     .back{
         width: 100%;
         text-align: center;
@@ -159,12 +161,16 @@ main{
         font-size: 120%;
         position: absolute;
         border: 1px solid rgba($color: #fff, $alpha: .1);
-        background: rgba($color: #ffffff, $alpha: .1);
-        backdrop-filter: blur(5px);
+        background: rgba($color: #fff, $alpha: .01);
+        backdrop-filter: blur(10px);
         border-radius: 1rem;
+        transform: perspective(600px) rotateY(180deg);
+        transition: all .4s linear;
     }
     .front{
         position: absolute;
+        transition: all .4s linear;
+        transform: perspective(600px) rotateY(0deg);
         overflow: hidden;
         backface-visibility: hidden;
         width: 100%;
@@ -187,6 +193,12 @@ main{
             border-bottom-right-radius: 1rem;
 
         }
+    }
+    .card:hover > .front {
+        transform: perspective(600px) rotateY(-180deg);
+    }
+    .card:hover>.back {
+        transform: perspective(600px) rotateY(0deg);
     }
     .card:nth-child(1)>.front{
         background: url("../images/pizza1_cropped.jpg");

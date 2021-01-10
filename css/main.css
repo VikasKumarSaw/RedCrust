@@ -164,10 +164,6 @@ main {
   cursor: pointer;
   width: 250px;
   height: 250px;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.005);
-  border: 2px solid rgba(255, 255, 255, 0.1);
   margin: 2rem;
   margin-right: 0;
   border-radius: 1rem;
@@ -185,14 +181,22 @@ main {
   font-size: 120%;
   position: absolute;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border-radius: 1rem;
+  -webkit-transform: perspective(600px) rotateY(180deg);
+          transform: perspective(600px) rotateY(180deg);
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
 }
 
 .cards .front {
   position: absolute;
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
   overflow: hidden;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -215,6 +219,16 @@ main {
           backdrop-filter: blur(10px);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+
+.cards .card:hover > .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+          transform: perspective(600px) rotateY(-180deg);
+}
+
+.cards .card:hover > .back {
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
 }
 
 .cards .card:nth-child(1) > .front {
