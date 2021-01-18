@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
 }
 
 html, body {
@@ -10,27 +12,30 @@ html, body {
   height: 100%;
 }
 
-.wrapper {
-  height: 100%;
-  width: 100%;
-  background: url("../images/ivan-torres-MQUqbmszGGM-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: cover;
+a {
+  text-decoration: none;
 }
 
-.wrapper .tint {
+li {
+  list-style-type: none;
+}
+
+.wrapper {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  background-attachment: fixed;
+  overflow-x: hidden;
   padding: 5vh 0;
 }
 
 .wrapper .glass {
   margin: 0 auto;
   width: 90vw;
-  height: 100%;
-  max-width: 1800px;
+  max-width: 1440px;
   border-radius: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
@@ -50,9 +55,12 @@ html, body {
 }
 
 nav {
-  padding: 0 5rem;
+  padding: 0 3rem;
   height: 5rem;
   line-height: 5rem;
+  font-weight: 700;
+  color: #9e1d1d;
+  font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,103 +68,59 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   text-align: center;
 }
 
-nav a {
-  color: #ededed;
-  text-decoration: none;
+main .desc {
+  padding: 1rem 3rem;
 }
 
-nav ul {
-  font-family: "Montserrat";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+main .desc h1 {
+  font-size: 1.8rem;
+  margin: 1rem 0rem;
 }
 
-nav ul li {
-  list-style-type: none;
-  margin: 0 2rem;
+main .desc span:nth-child(1) {
+  color: #9e1d1d;
+}
+
+main .desc h2 {
   font-size: 1.4rem;
-}
-
-nav #brand {
-  margin: 0 2rem;
-  line-height: 5rem;
-  font-family: "Montserrat";
-  font-weight: 700;
-  font-size: 2rem;
-  color: #9e1d1d;
-}
-
-nav #brand span {
-  color: #be1717;
-}
-
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-}
-
-.desc {
-  position: relative;
-  padding: 0 7rem;
-  font-family: "Montserrat";
-  max-width: 55%;
-  height: 200px;
-}
-
-.desc h1 {
-  font-size: 3.2rem;
-  color: white;
-  margin-bottom: 2rem;
-}
-
-.desc span:nth-child(1) {
-  color: #9e1d1d;
-}
-
-.desc h2 {
-  font-size: 2rem;
-  color: #e2e2e2;
   font-weight: 300;
-  line-height: 120%;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
-.desc .cta {
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
+main .desc .cta {
+  font-size: 1rem;
+  padding: 1rem 1rem;
   border: 1px solid #e2e2e2;
-  color: #e2e2e2;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
+  margin: 1rem auto;
 }
 
-.desc .cta:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+main .desc .cta:hover {
+  background-color: rgba(255, 255, 255, 0.15);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
 
 .cards {
-  width: 100%;
-  height: 100%;
   margin: 0 auto;
-  padding-right: 7rem;
+  width: 100%;
+  padding: 1rem 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cards .card {
@@ -164,31 +128,30 @@ main {
   cursor: pointer;
   width: 250px;
   height: 250px;
-  margin: 2rem;
-  margin-right: 0;
+  margin: 1rem auto;
   border-radius: 1rem;
-  font-family: "Montserrat";
+}
+
+.cards .back, .cards .front {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 300;
+  position: absolute;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .4s ease-in;
+  transition: -webkit-transform .4s ease-in;
+  transition: transform .4s ease-in;
+  transition: transform .4s ease-in, -webkit-transform .4s ease-in;
 }
 
 .cards .back {
-  width: 100%;
-  text-align: center;
-  height: 100%;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   padding: 1rem;
-  font-size: 120%;
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.01);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  -webkit-transform: perspective(600px) rotateY(180deg);
-          transform: perspective(600px) rotateY(180deg);
-  -webkit-transition: all .4s ease-in;
-  transition: all .4s ease-in;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,31 +161,27 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-transform: perspective(600px) rotateY(180deg);
+          transform: perspective(600px) rotateY(180deg);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 .cards .front {
-  position: absolute;
-  -webkit-transition: all .4s ease-in;
-  transition: all .4s ease-in;
-  -webkit-transform: perspective(600px) rotateY(0deg);
-          transform: perspective(600px) rotateY(0deg);
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  width: 100%;
   background-repeat: no-repeat;
+  width: 250px;
   background-size: cover;
   background-position: center;
-  border-radius: 1rem;
-  width: 100%;
   padding-top: 190px;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
 }
 
 .cards .front .card-text {
   height: 60px;
+  width: 250px;
   line-height: 60px;
-  text-align: center;
-  font-size: 120%;
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -230,12 +189,14 @@ main {
   border-bottom-right-radius: 1rem;
 }
 
-.cards .card:hover > .front {
+.cards .card:hover > .front,
+.cards .card:focus > .front {
   -webkit-transform: perspective(600px) rotateY(-180deg);
           transform: perspective(600px) rotateY(-180deg);
 }
 
-.cards .card:hover > .back {
+.cards .card:hover > .back,
+.cards .card:focus > .back {
   -webkit-transform: perspective(600px) rotateY(0deg);
           transform: perspective(600px) rotateY(0deg);
 }
@@ -271,253 +232,85 @@ main {
 }
 
 footer {
+  padding: 1rem;
   text-align: center;
-  position: relative;
-  bottom: 0;
-  height: 5rem;
-  line-height: 5rem;
-  font-family: "Montserrat";
-  color: #ededed;
-  font-size: 1.4rem;
+  font-weight: 300;
+  font-size: .8rem;
 }
 
-@media screen and (min-width: 250px) {
+footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .links span {
+  padding: 0.1rem .5rem;
+}
+
+footer .links a {
+  color: #fff;
+}
+
+@media screen and (min-width: 720px) {
+  nav {
+    padding: 1rem 4rem;
+  }
+  main .desc {
+    padding: 2rem 4rem;
+  }
+  main .desc .cta {
+    text-align: center;
+    margin: 2rem 0rem;
+  }
   .cards {
-    margin-top: 3rem;
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    padding: 0;
-  }
-  .cards .card {
-    margin: 10px auto;
-  }
-  .cards .card:not(:nth-child(1)) {
-    display: none;
-  }
-  .tint {
-    padding: 0;
-  }
-  nav {
-    padding: 0 1rem;
-    height: 4rem;
-    line-height: 4rem;
-  }
-  nav ul li {
-    margin: 0 .5rem;
-    font-size: .8rem;
-  }
-  nav #brand {
-    margin: 0 1rem;
-    line-height: 4rem;
-    font-size: 1rem;
-  }
-  main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
-  }
-  .desc {
-    max-width: 100%;
-    padding: 0 2rem;
-  }
-  .desc h1 {
-    margin-top: .4rem;
-    font-size: 1.1em;
-    color: white;
-    margin-bottom: .9rem;
-  }
-  .desc h2 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  .desc .cta {
-    margin: 0 auto;
-    font-size: .8rem;
-    padding: .5rem 1rem;
-  }
-  footer {
-    height: 3rem;
-    line-height: 3rem;
-    font-size: .8rem;
-  }
-}
-
-@media screen and (min-width: 430px) {
-  nav {
-    padding: 0 2rem;
-  }
-  .desc {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0 3rem;
   }
-  .desc h1 {
-    font-size: 1.3em;
-  }
-  .desc h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  .desc .cta {
-    margin: 0;
-    font-size: .8rem;
-    padding: .5rem 1rem;
-  }
 }
 
-@media screen and (min-width: 560px) {
-  .cards {
-    margin-top: 3rem;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    padding: 0;
-  }
-  .cards .card {
-    margin: 10px auto;
-    display: none;
-  }
-  .cards .card:nth-child(1), .cards .card:nth-child(2) {
-    display: block;
-  }
-  .desc h1 {
-    font-size: 1.6em;
-    margin-top: 1.2;
-  }
-  .desc h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-  }
-}
-
-@media screen and (min-width: 850px) {
-  .cards {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    padding-right: 7rem;
-  }
-  .cards .card {
-    margin: 10px 10px;
-    display: none;
-  }
-  .cards .card:nth-child(2) {
-    display: none;
-  }
-  .cards .card:nth-child(1) {
-    display: block;
-  }
-  .tint {
-    padding: 5vh 0;
-  }
+@media screen and (min-width: 1024px) {
   nav {
-    padding: 0 5rem;
-    height: 5rem;
-    line-height: 5rem;
+    padding: 1rem 6rem;
   }
-  nav ul li {
-    margin: 0 2rem;
-    font-size: 1.4rem;
+  main .desc {
+    padding: 2rem 6rem;
+    max-width: 60%;
   }
-  nav #brand {
-    margin: 0 2rem;
-    line-height: 5rem;
-    font-size: 2rem;
+  main .desc .cta {
+    margin: 2rem 0rem;
   }
-  main {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .desc {
-    position: relative;
-    top: 40%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    padding: 0 7rem;
-    max-width: 55%;
-  }
-  .desc h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-  }
-  .desc h2 {
-    font-size: 1.2rem;
-    line-height: 120%;
-    margin-bottom: 1.2rem;
-  }
-  .desc .cta {
-    font-size: 1rem;
-    padding: .7rem 1.4rem;
-  }
-  footer {
-    height: 5rem;
-    line-height: 5rem;
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .desc h1 {
-    font-size: 2rem;
-    margin-bottom: 1.4rem;
-  }
-  .desc h2 {
-    font-size: 1.6rem;
-    margin-bottom: 1.6rem;
-  }
-  .desc .cta {
-    font-size: 1rem;
-    padding: 1rem 2rem;
-  }
-}
-
-@media screen and (min-width: 1320px) {
   .cards {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    padding-right: 7rem;
-  }
-  .cards .card {
-    margin-left: 2rem;
-    display: block;
-  }
-  .cards .card:nth-child(2),
-  .cards .card:nth-child(3),
-  .cards .card:nth-child(4) {
-    display: block;
+    max-width: 1100px;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 3rem;
   }
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1440px) {
+  nav {
+    padding: 1rem 12rem;
+  }
+  main .desc {
+    padding: 2rem 12rem;
+    max-width: 60%;
+  }
+  main .desc .cta {
+    margin: 2rem 0rem;
+  }
   .cards {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    padding-right: 7rem;
-  }
-  .cards .card {
-    margin-left: 2rem;
-    display: block;
-  }
-  .cards .card:nth-child(2),
-  .cards .card:nth-child(3),
-  .cards .card:nth-child(4),
-  .cards .card:nth-child(5),
-  .cards .card:nth-child(6) {
-    display: block;
-  }
-  .desc h1 {
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
-  }
-  .desc h2 {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-  }
-  .desc .cta {
-    font-size: 1.2rem;
+    padding: 0 3rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
