@@ -1,0 +1,59 @@
+html,
+body {
+  width: 100%;
+  font-family: 'Montserrat',sans-serif;
+  background-color: #4E5054;
+  min-height: -webkit-fill-available;
+}
+
+.s404 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 300;
+}
+
+.s404 .main-text {
+  font-size: 7rem;
+}
+
+.s404 .subtitle-main {
+  font-size: 2rem;
+}
+
+.s404 .subtitle-desc {
+  font-size: 1.1rem;
+}
+
+.mars .glass {
+  height: 100%;
+  width: 80vw;
+}
+
+@media screen and (min-width: 720px) {
+  .s404 .main-text {
+    font-size: 8rem;
+  }
+  .s404 .subtitle-main {
+    font-size: 3rem;
+  }
+  .s404 .subtitle-desc {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .s404 .main-text {
+    font-size: 10rem;
+  }
+  .s404 .subtitle-main {
+    font-size: 4rem;
+  }
+  .s404 .subtitle-desc {
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=404.css.map */
