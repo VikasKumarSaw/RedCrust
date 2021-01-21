@@ -1,8 +1,9 @@
 html,
 body {
     width: 100%;
+    height: 100%;
     font-family: 'Montserrat',sans-serif;
-    background-color: #4E5054;
+    background-color: #552A1A;
     min-height: -webkit-fill-available;
 }
 
@@ -30,13 +31,16 @@ body {
 
 .mars {
     .glass{
-        height:  100%;
+        position: relative;
+        min-height:  25rem;
+        height: 100%;
         width: 80vw;
     }
 }
 
 @media screen and (min-width:720px){
     .s404 {
+        // margin: 1rem;
         .main-text {
             font-size: 8rem;
         }
