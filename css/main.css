@@ -80,6 +80,10 @@ main .desc {
   padding: 1rem 3rem;
 }
 
+main .desc .image {
+  display: none;
+}
+
 main .desc a {
   color: #fff;
 }
@@ -293,8 +297,29 @@ footer .links a {
     padding: 1rem 6rem;
   }
   main .desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-item-align: center;
+        align-self: center;
     padding: 2rem 6rem;
-    max-width: 60%;
+  }
+  main .desc div {
+    width: 50%;
+  }
+  main .desc .image {
+    display: block;
+    max-width: 40%;
+  }
+  main .desc .image img {
+    width: 100%;
   }
   main .desc .cta {
     margin: 2rem 0rem;
@@ -313,7 +338,6 @@ footer .links a {
   }
   main .desc {
     padding: 2rem 12rem;
-    max-width: 60%;
   }
   main .desc .cta {
     margin: 2rem 0rem;

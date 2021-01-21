@@ -166,7 +166,8 @@ main .other-images .image-cards .card:nth-child(6) > .front {
 }
 
 main .other-images .image-cards .card:nth-child(7) > .front {
-  background: url("../images/pizza4_c_dark.jpg");
+  background: url("../images/474172-PHPBEH-379.jpg");
+  background-size: cover;
 }
 
 @media screen and (min-width: 720px) {
