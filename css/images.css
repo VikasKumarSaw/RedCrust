@@ -1,0 +1,200 @@
+.wrapper.images {
+  width: 100%;
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  background: url("../images/mars-image.jpg");
+  font-family: 'Montserrat',sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+main {
+  padding: 3rem;
+}
+
+main h1 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+main h2 {
+  margin: 2rem 0;
+  font-weight: 300;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+main .image-cards {
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .image-cards .card {
+  position: relative;
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+  border: 10px soid white;
+  border-radius: 1rem;
+  margin: .6rem auto;
+}
+
+main .image-cards .back,
+main .image-cards .front {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 300;
+  position: absolute;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .4s ease-in;
+  transition: -webkit-transform .4s ease-in;
+  transition: transform .4s ease-in;
+  transition: transform .4s ease-in, -webkit-transform .4s ease-in;
+}
+
+main .image-cards .back {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-transform: perspective(600px) rotateY(180deg);
+          transform: perspective(600px) rotateY(180deg);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+main .image-cards .back a {
+  color: #fff;
+  text-decoration: underline;
+  line-height: 120%;
+}
+
+main .image-cards .front {
+  background-repeat: no-repeat;
+  width: 250px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 190px;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
+}
+
+main .card:hover > .front,
+main .card:focus > .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+          transform: perspective(600px) rotateY(-180deg);
+}
+
+main .card:hover > .back,
+main .card:focus > .back {
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
+}
+
+main .bg-images .image-cards .card:nth-child(1) > .front {
+  background: url("../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+main .bg-images .image-cards .card:nth-child(2) > .front {
+  background: url("../images/mars.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+main .bg-images .image-cards .card:nth-child(3) > .front {
+  background: url("../images/mars-image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+main .other-images .image-cards .card:nth-child(n) > .front {
+  background-position: center;
+  background-size: cover;
+}
+
+main .other-images .image-cards .card:nth-child(1) > .front {
+  background: url("../images/pizza1_cropped_dark.jpg");
+}
+
+main .other-images .image-cards .card:nth-child(2) > .front {
+  background: url("../images/pizza2_c_dark.jpg");
+}
+
+main .other-images .image-cards .card:nth-child(3) > .front {
+  background: url("../images/pizza3_c_dark.jpg");
+}
+
+main .other-images .image-cards .card:nth-child(4) > .front {
+  background: url("../images/pizza4_c_dark.jpg");
+}
+
+main .other-images .image-cards .card:nth-child(5) > .front {
+  background: url("../images/pizza5_c_dark.jpg");
+}
+
+main .other-images .image-cards .card:nth-child(6) > .front {
+  background: url("../images/pizza6_c_dark.jpg");
+}
+
+main .other-images .image-cards .card:nth-child(7) > .front {
+  background: url("../images/pizza4_c_dark.jpg");
+}
+
+@media screen and (min-width: 720px) {
+  main {
+    padding: 4rem;
+  }
+  main h1 {
+    text-align: center;
+  }
+  main .image-cards {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 5rem;
+  }
+  main h1 {
+    text-align: center;
+  }
+  main .image-cards {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  main .image-cards .card {
+    margin: 2rem;
+  }
+}
+/*# sourceMappingURL=images.css.map */
